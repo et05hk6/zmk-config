@@ -16,7 +16,7 @@
     &kp GUI  &kp DEL      &kp W &kp E &kp R &kp T                               &kp Y &kp U &kp I &kp O &kp RSE &none
             &kp ESC &kp Q &kp S &kp D &kp F &kp G                               &kp H &kp J &kp K &kp L &kp P &kp CARET
             &kp TAB &kp A &kp X &kp C &kp V &kp B                               &kp N &kp M &kp COMMA &kp DOT &kp SEMI &kp CARET
-            &kp Z &none &none &none         &none &kp ALT   &kp BSPC &kp SPACE &kp ENT    &kp RALT &kp DOT &kp MINUS
+            &kp Z &none &none &none &none &kp ALT   &none &none   &none    &kp RALT &kp DOT &kp MINUS
                         >;
                 };
         };

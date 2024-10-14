@@ -1,0 +1,12 @@
+file_format: "1"
+id: cosmos
+name: Cosmos
+type: shield
+url: https://github.com/et05hk6/zmk-config/
+requires: [pro_micro]
+exposes:
+features:
+  - keys
+siblings:
+  - cosmos_left
+  - cosmos_right

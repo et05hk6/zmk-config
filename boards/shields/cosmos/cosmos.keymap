@@ -24,7 +24,7 @@
                                &kp CAPS &kp A    &kp S   &kp D   &kp F   &kp G                   &kp H   &kp J   &kp K   &kp L    &none    &none
                                         &kp Z    &kp X   &kp C   &kp V   &kp B                   &kp N   &kp M  &kp COMMA &kp DOT &kp MINUS 
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
-                                                         &none   &kp CTRL &kp LALT               &kp ESC &kp SPACE &kp BSPC  
+                                                         &none &kp LCTRL &kp LALT               &kp ESC &kp SPACE &kp BSPC  
                                                                  &kp GUI &kp INS                 &kp DEL &kp RET   
                         >;
                 };

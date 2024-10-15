@@ -11,13 +11,30 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                default_layer { // Layer 0
                         bindings = <
-    &kp GUI  &kp DEL      &kp W &kp E &kp R &kp T                               &kp Y &kp U &kp I &kp O &kp RSE &none
-            &kp ESC &kp Q &kp S &kp D &kp F &kp G                               &kp H &kp J &kp K &kp L &kp P &kp CARET
-            &kp TAB &kp A &kp X &kp C &kp V &kp B                               &kp N &kp M &kp COMMA &kp DOT &kp SEMI &kp CARET
-            &kp Z &none &none &none &none &kp ALT   &none &none   &none    &kp RALT &kp DOT &kp MINUS
+                                // --------------------------------------------------------------
+                             //|  TAB  |   Q   |   W   |   E   |   R   |   T   |               |   Y   |   U   |   I   |    O   |    P   |    Å   |
+                             //| CAPS  |   A   |   S   |   D   |   F   |   G   |               |   H   |   J   |   K   |    L   |    Ö   |    Ä   |
+                             //        |   Z   |   X   |   C   |   V   |   B   |               |   N   |   M   |   ,   |    .   |    -   |
+                             //                |   <   |   >   |                                               |   [   |    ]   |
+                             //                        |  none |  CTRL |  ALT  |               |  ESC  | SPACE | BKSP  |
+                             //                                |  WIN  |   T   |               |  DEL  | ENTER | 
+                               &kp TAB  &kp Q    &kp W   &kp E   &kp R   &kp T                   &kp Y   &kp U   &kp I   &kp O    &kp P    &none
+                               &kp CAPS &kp A    &kp S   &kp D   &kp F   &kp G                   &kp H   &kp J   &kp K   &kp L    &none    &none
+                                        &kp Z    &kp X   &kp C   &kp V   &kp B                   &kp N   &kp M  &kp COMMA &kp DOT &kp MINUS 
+                                                &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
+                                                         &none   &kp CTRL &kp LALT               &kp ESC &kp SPACE &kp BSPC  
+                                                                 &kp GUI &kp INS                 &kp DEL &kp RET   
                         >;
                 };
         };
+
+
 };
+
+
+/* &kp GUI  &kp DEL      &kp W &kp E &kp R &kp T                               &kp Y &kp U &kp I &kp O &kp RSE &none
+            &kp ESC &kp Q &kp S &kp D &kp F &kp G                               &kp H &kp J &kp K &kp L &kp P &kp CARET
+            &kp TAB &kp A &kp X &kp C &kp V &kp B                               &kp N &kp M &kp COMMA &kp DOT &kp SEMI &kp CARET
+            &kp Z &none &none &none &none &kp ALT   &none &none   &none    &kp RALT &kp DOT &kp MINUS*/

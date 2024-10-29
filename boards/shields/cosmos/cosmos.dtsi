@@ -74,7 +74,7 @@
 
 / {
     chosen {
-        zmk,physical-layout = &layout_ortho_4x12_all1u ;
+        zmk,physical-layout = &default_layout ;
         // Other chosen items
     };
 };

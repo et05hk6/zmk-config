@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h> // Put this with the other includes at the top of your dtsi
+#include <physical_layouts.dtsi>
 
 / {
     default_layout: default_layout {
@@ -6,15 +7,78 @@
         display-name = "Default Layout";
         transform = <&default_transform>;
         kscan = <&kscan0>;
+
+        keys  //                     w   h    x    y     rot    rx    ry
+            // Row 1
+            = <&key_physical_attrs 100 100    0    150       0     0     0>
+            , <&key_physical_attrs 100 100  100    150       0     0     0>
+            , <&key_physical_attrs 100 100  200    70       0     0     0>
+            , <&key_physical_attrs 100 100  300    0       0     0     0>
+            , <&key_physical_attrs 100 100  400    30       0     0     0>
+            , <&key_physical_attrs 100 100  500    30       0     0     0>
+            
+            , <&key_physical_attrs 100 100  700    30       0     0     0>
+            , <&key_physical_attrs 100 100  800    30       0     0     0>
+            , <&key_physical_attrs 100 100  900    0       0     0     0>
+            , <&key_physical_attrs 100 100  1000   70       0     0     0>
+            , <&key_physical_attrs 100 100 1100    150       0     0     0>
+            , <&key_physical_attrs 100 100 1200    150       0     0     0>
+
+            // Row 2
+            , <&key_physical_attrs 100 100    0  250       0     0     0>
+            , <&key_physical_attrs 100 100  100  250       0     0     0>
+            , <&key_physical_attrs 100 100  200  170       0     0     0>
+            , <&key_physical_attrs 100 100  300  100       0     0     0>
+            , <&key_physical_attrs 100 100  400  130       0     0     0>
+            , <&key_physical_attrs 100 100  500  130       0     0     0>
+            
+            , <&key_physical_attrs 100 100  700  130       0     0     0>
+            , <&key_physical_attrs 100 100  800  130       0     0     0>
+            , <&key_physical_attrs 100 100  900  100       0     0     0>
+            , <&key_physical_attrs 100 100  1000  170       0     0     0>
+            , <&key_physical_attrs 100 100 1100  250       0     0     0>
+            , <&key_physical_attrs 100 100 1200  250       0     0     0>
+
+            // Row 3
+            , <&key_physical_attrs 100 100  200  370       0     0     0>
+            , <&key_physical_attrs 100 100  100  350       0     0     0>
+            , <&key_physical_attrs 100 100  200  270       0     0     0>
+            , <&key_physical_attrs 100 100  300  200       0     0     0>
+            , <&key_physical_attrs 100 100  400  230       0     0     0>
+            , <&key_physical_attrs 100 100  500  230       0     0     0>
+            
+            , <&key_physical_attrs 100 100  700  230       0     0     0>
+            , <&key_physical_attrs 100 100  800  230       0     0     0>
+            , <&key_physical_attrs 100 100  900  200       0     0     0>
+            , <&key_physical_attrs 100 100  1000  270       0     0     0>
+            , <&key_physical_attrs 100 100 1100  350       0     0     0>
+            , <&key_physical_attrs 100 100 1000  370       0     0     0>
+
+            // Row 4
+            , <&key_physical_attrs 100 100  300  300       0     0     0>
+            , <&key_physical_attrs 100 100  340  400       1000   300   350>
+            , <&key_physical_attrs 100 100  430  410       1400   370   432>
+            , <&key_physical_attrs 100 100  540  430       2500   465   440>
+            , <&key_physical_attrs 100 100  430  510       1600   370   432>
+            , <&key_physical_attrs 100 100  550  520       2400   448   433>
+            
+            , <&key_physical_attrs 100 100  650  520       (-2400)   852   433>
+            , <&key_physical_attrs 100 100  770  510       (-1600)   930   432>
+            , <&key_physical_attrs 100 100  660  430       (-2500)   835   440>
+            , <&key_physical_attrs 100 100  770  410       (-1400)   930   432>
+            , <&key_physical_attrs 100 100 860  400        (-1000)   1000  350>
+            , <&key_physical_attrs 100 100 900  300        0     0     0>
+            ;
     };
 };
 
 / {
     chosen {
-        zmk,physical-layout = &default_layout;
+        zmk,physical-layout = &layout_ortho_4x12_all1u ;
         // Other chosen items
     };
 };
+
 
 / {
     default_transform: keymap_transform0 {

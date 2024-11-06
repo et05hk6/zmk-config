@@ -28,9 +28,9 @@
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
 
 
-                             //                        |ALT    |  CTRL |  studio |               |  ESC  | SPACE | BKSP  |
-                                               &kp LALT   &kp LCTRL &studio_unlock              &kp ESC &kp SPACE &kp BSPC  
-                                                                 &kp GUI &kp INS                 &kp DEL &kp RET   
+                             //                        |ALT    |  CTRL |  &studio_unlock |               |  ESC  | SPACE | BKSP  |
+                                                               &kp 1   &kp 2  &kp 3             &kp ESC &kp SPACE &kp BSPC  
+                                                                 &kp 4 &kp 5                 &kp DEL &kp RET   
                         >;
                 };
         };

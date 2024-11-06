@@ -1,11 +1,66 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
 
 #define DEF 0
 #define LWR 1
 #define RSE 2
 #define ADJ 3
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
+};
+
+
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hs: homerow_shifts {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_SHIFTS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+        hsl: homerow_shifts_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_SHIFTS_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&to>;
+        };
+	td: tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPDANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+	bl: layertap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYERTAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&to>, <&kp>;
+        };
+    };
 
 / {
         keymap {
@@ -35,6 +90,28 @@
                         >;
                 };
 
+                /* Lätt förstörd variant av Ben Vallacks https://github.com/benvallack/zmk-config/blob/master/config/cradio.keymap
+                default_layer {
+		        bindings = <
+                             //|   TAB   |     C     |     L     |     M     |     R     |  none  |               | trans |    F    |     U     |     Z     |   BKSP   |   &none   |
+                		&kp TAB      &kp C       &kp L      &kp M       &trans     &none                   &trans    &kp F      &kp U      &kp Z      &kp BKSP     &none
+
+                             //|    I    |     S     |     R     |     T     |     R     |  none  |               | trans |    N    |     K     |     A     |     O     |   &none   |
+                	          &kp I    &hm LCTL S  &hm LALT R  &hm LGUI T    &trans    &none 	       	  &trans  &hm RGUI N &hm RALT K  &hm RCTL A    &kp O       &none
+
+                             //          |     Q     |     V     |     M     |     D     |    SPC   |             |   E   |    H    |     Y     |     .     |     X     |
+                		          &hs LSHIFT Q   &kp V       &kp W       &kp D    &mt LC(LS(LALT)) SPC      &kp E   &kp H       &kp Y   &td EXCL DOT  &hs RSHIFT X
+
+                             //                                              |   none   |   trans   |             | trans |    E    |
+                          		                                        &none       &trans                 &trans     &kp E
+
+                             //                       |  unlock    |  CTRL |  &studio_unlock |               |  ESC  | &mt LC(LS(LALT)) SPC | BKSP  |
+                                                        &studio_unlock    &kp K  &kp L             &kp ESC &kp SPACE &kp BSPC  
+
+                                                                 &kp N &kp M                 &kp DEL &kp RET   
+	        	>;
+		};*/
+
                 lower_layer { // Layer 1
                         bindings = <
                                 // --------------------------------------------------------------
@@ -57,11 +134,29 @@
                                                                  &kp N &kp M                 &kp DEL &kp RET   
                         >;
                 };
+
+                upper_layer { // Layer 2
+                        bindings = <
+                                // --------------------------------------------------------------
+                             //                                |  WIN  |   T   |               |  DEL  | ENTER | 
+                             //|  ESC  |   Q   |   W   |   E   |   R   |   T   |               |   Y   |   U   |   I   |    O   |    P   |    Å   |
+                               &kp ESC   &kp Q   &kp W   &kp E   &kp R   &kp T                   &kp Y   &kp U   &kp I   &kp O    &kp P    &none
+
+                             //| TAB  |   A   |   S   |   D   |   F   |   G   |               |   H   |   J   |   K   |    L   |    Ö   |    Ä   |
+                                &kp TAB  &kp A   &kp S   &kp D   &kp F   &kp G                   &kp H   &kp J   &kp K   &kp L    &none    &none
+
+                             //        |   Z   |   X   |   C   |   V   |   B   |               |   N   |   M   |   ,   |    .   |    -   |
+                                         &kp Z   &kp X   &kp C   &kp V   &kp B                   &kp N   &kp M &kp COMMA &kp DOT &kp MINUS 
+
+                             //                |   <   |   >   |                                               |   [   |    ]   |
+                                                &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
+
+
+                             //                        |ALT    |  CTRL |  &studio_unlock |               |  ESC  | SPACE | BKSP  |
+                                                              &studio_unlock    &kp K  &kp L             &kp ESC &kp SPACE &kp BSPC  
+                                                                 &kp N &kp M                 &kp DEL &kp RET   
+                        >;
+                };
+
         };
 };
-
-
-/* &kp GUI  &kp DEL      &kp W &kp E &kp R &kp T                               &kp Y &kp U &kp I &kp O &kp RSE &none
-            &kp ESC &kp Q &kp S &kp D &kp F &kp G                               &kp H &kp J &kp K &kp L &kp P &kp CARET
-            &kp TAB &kp A &kp X &kp C &kp V &kp B                               &kp N &kp M &kp COMMA &kp DOT &kp SEMI &kp CARET
-            &kp Z &none &none &none &none &kp ALT   &none &none   &none    &kp RALT &kp DOT &kp MINUS*/

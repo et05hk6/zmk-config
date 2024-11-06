@@ -29,7 +29,7 @@
 
 
                              //                        |ALT    |  CTRL |  &studio_unlock |               |  ESC  | SPACE | BKSP  |
-                                                               &kp J   &kp K  &kp L             &kp ESC &kp SPACE &kp BSPC  
+                                                              &studio_unlock    &kp K  &kp L             &kp ESC &kp SPACE &kp BSPC  
                                                                  &kp N &kp M                 &kp DEL &kp RET   
                         >;
                 };

@@ -29,8 +29,8 @@
 
 
                              //                        |ALT    |  CTRL |  &studio_unlock |               |  ESC  | SPACE | BKSP  |
-                                                               &kp 1   &kp 2  &kp 3             &kp ESC &kp SPACE &kp BSPC  
-                                                                 &kp 4 &kp 5                 &kp DEL &kp RET   
+                                                               &kp J   &kp K  &kp L             &kp ESC &kp SPACE &kp BSPC  
+                                                                 &kp N &kp M                 &kp DEL &kp RET   
                         >;
                 };
         };

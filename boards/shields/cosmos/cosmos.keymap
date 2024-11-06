@@ -14,17 +14,22 @@
                 default_layer { // Layer 0
                         bindings = <
                                 // --------------------------------------------------------------
-                             //        |   Z   |   X   |   C   |   V   |   B   |               |   N   |   M   |   ,   |    .   |    -   |
-                             //                |   <   |   >   |                                               |   [   |    ]   |
-                             //                        |  none |  CTRL |  ALT  |               |  ESC  | SPACE | BKSP  |
                              //                                |  WIN  |   T   |               |  DEL  | ENTER | 
-                             //|  TAB  |   Q   |   W   |   E   |   R   |   T   |               |   Y   |   U   |   I   |    O   |    P   |    Å   |
+                             //|  ESC  |   Q   |   W   |   E   |   R   |   T   |               |   Y   |   U   |   I   |    O   |    P   |    Å   |
                                &kp ESC   &kp Q   &kp W   &kp E   &kp R   &kp T                   &kp Y   &kp U   &kp I   &kp O    &kp P    &none
-                             //| CAPS  |   A   |   S   |   D   |   F   |   G   |               |   H   |   J   |   K   |    L   |    Ö   |    Ä   |
+
+                             //| TAB  |   A   |   S   |   D   |   F   |   G   |               |   H   |   J   |   K   |    L   |    Ö   |    Ä   |
                                 &kp TAB  &kp A   &kp S   &kp D   &kp F   &kp G                   &kp H   &kp J   &kp K   &kp L    &none    &none
-                                        &kp Z    &kp X   &kp C   &kp V   &kp B                   &kp N   &kp M  &kp COMMA &kp DOT &kp MINUS 
+
+                             //        |   Z   |   X   |   C   |   V   |   B   |               |   N   |   M   |   ,   |    .   |    -   |
+                                         &kp Z   &kp X   &kp C   &kp V   &kp B                   &kp N   &kp M &kp COMMA &kp DOT &kp MINUS 
+
+                             //                |   <   |   >   |                                               |   [   |    ]   |
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
-                                                         &studio_unlock  &kp LCTRL &kp LALT               &kp ESC &kp SPACE &kp BSPC  
+
+
+                             //                        |ALT    |  CTRL |  studio |               |  ESC  | SPACE | BKSP  |
+                                               &kp LALT   &kp LCTRL &studio_unlock              &kp ESC &kp SPACE &kp BSPC  
                                                                  &kp GUI &kp INS                 &kp DEL &kp RET   
                         >;
                 };

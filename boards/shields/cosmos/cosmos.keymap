@@ -24,7 +24,7 @@
                                &kp TAB &kp a    &kp s   &kp d   &kp f   &kp g                   &kp H   &kp J   &kp K   &kp L    &none    &none
                                         &kp z    &kp x   &kp c   &kp v   &kp b                   &kp N   &kp M  &kp COMMA &kp DOT &kp MINUS 
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
-                                                         &none &kp LCTRL &kp LALT               &kp ESC &kp SPACE &kp BSPC  
+                                                         &studio_unlock  &kp LCTRL &kp LALT               &kp ESC &kp SPACE &kp BSPC  
                                                                  &kp GUI &kp INS                 &kp DEL &kp RET   
                         >;
                 };

@@ -2,10 +2,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
-#include "zmk-helpers/helper.h"
 
-// Source unicode-chars for desired languages
-#include "zmk-helpers/unicode-chars/swedish.dtsi"
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
 &mt {
     flavor = "tap-preferred";
@@ -14,6 +12,13 @@
 
 
     behaviors {
+        mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -80,7 +85,7 @@
                                &kp ESC   &kp B   &kp L   &kp D   &kp C   &kp V                   &kp J   &kp Y   &kp O   &kp U    &kp SEMI &kp LBKT
 
                              //|  TAB  |   N   |   R   |   T   |   S    |   G   |              |   P   |   H   |   A   |    E   |    I   |    Ä   |
-                                &kp TAB  &kp N   &kp R &hm LALT T   &kp S   &kp G                &kp P   &kp H   &kp A   &kp E    &kp I    &kp SQT
+                                &kp TAB &kp N &hm CTRL R &hm LALT T &hm LGUI S   &kp G        &kp P   &hm RGUI H &hm RALT A &hm RCTL E &kp I &kp SQT
 
                              //        |   X   |   Q   |   M   |   W   |   Z   |               |   K   |   F   |   '   |    ,   |    .   |
                                          &kp X   &kp Q   &kp M   &kp W   &kp Z                   &kp K   &kp F &kp BSLH &kp DOT &kp MINUS 
@@ -89,11 +94,11 @@
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
 
 
-                             //                  |  stdio ulck   |  SHIFT |  MEH |               |  to 1  | SPACE | BKSP  |
-                                                  &studio_unlock  &kp K  &kp L             &kp ESC &kp SPACE &kp BSPC  
+                             //                  |  DEL   |  SHIFT |  To 2 |               |  to 1  | SPACE | BKSP  |
+                                                  &kp DEL  &kp K    MO_TOG(2)             MO_TOG(1) &kp SPACE &kp BSPC  
 
-                             //                                  | trans | trans |               | trans | trans |
-                                                                   &kp N   &kp M                  &kp DEL &kp RET   
+                             //                                  | none | none |               | none | none |
+                                                                   &none   &none                  &none &none   
                         >;
                 };
 
@@ -121,37 +126,61 @@
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
 
 
-                             //                  |  stdio ulck   |  SHIFT |  to 1 |            |  to 2  | SPACE | BKSP  |
-                                                  &studio_unlock  &kp K  &kp L             &kp ESC &kp SPACE &kp BSPC  
+                             //                  |  stdio ulck   |  SHIFT |  To 3 |               |  to 1  | SPACE | BKSP  |
+                                                  &studio_unlock  &kp K    MO_TOG(3)             MO_TOG(1) &kp SPACE &kp BSPC  
 
-                             //                                  | trans | trans |               | trans | trans |
-                                                                   &kp N   &kp M                  &kp DEL &kp RET   
+                             //                                  | none | none |               | none | none |
+                                                                   &none   &none                  &none &none   
                         >;
                 };
 
                 layer2 { // Nummer-lager
                         bindings = <
                                 // --------------------------------------------------------------
-                             //                                |  WIN  |   T   |               |  DEL  | ENTER | 
-                             //|  ESC  |   Q   |   W   |   E   |   R   |   T   |               |   Y   |   U   |   I   |    O   |    P   |    Å   |
+                             //|  ESC  |   B   |   L   |   #   |  '|'  |   V   |               |   DIV   |   7   |   8   |    9   |    -   |    none   |
                                &kp ESC   &kp Q   &kp W   &kp E   &kp R   &kp T                   &kp Y   &kp U   &kp I   &kp O    &kp P    &none
 
-                             //| TAB  |   A   |   S   |   D   |   F   |   G   |               |   H   |   J   |   K   |    L   |    Ö   |    Ä   |
-                                &kp TAB  &kp A   &kp S   &kp D   &kp F   &kp G                   &kp H   &kp J   &kp K   &kp L    &none    &none
+                             //|  TAB  |   N   |   R   |   @   |   /   |   !   |              |   *   |   4   |   5   |    6   |    +   |    none   |
+                                &kp TAB  &kp A   &kp S &hm LALT T   &kp F   &kp G                   &kp H   &kp J   &kp K   &kp L    &none    &none
 
-                             //        |   Z   |   X   |   C   |   V   |   B   |               |   N   |   M   |   ,   |    .   |    -   |
+                             //    ;   |   X   |   Q   |   &   |   \   |   Z   |               |   K   |   1   |   2   |    3   |  ENTER |
                                          &kp Z   &kp X   &kp C   &kp V   &kp B                   &kp N   &kp M &kp COMMA &kp DOT &kp MINUS 
+
+                             //                |   <   |   >   |                                               |   0   |    .   |
+                                                &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
+
+
+                             //                  |  stdio ulck   |  SHIFT |  To 3 |               |  to 1  | SPACE | BKSP  |
+                                                  &studio_unlock  &kp K    MO_TOG(3)             MO_TOG(1) &kp SPACE &kp BSPC  
+
+                             //                                  | none | none |               | none | none |
+                                                                   &none   &none                  &none &none   
+                        >;
+                };
+                
+                layer3 { // Nav layer
+                        bindings = <
+                                // --------------------------------------------------------------
+                             //|  ESC  |   B   |   L   |   D   |   C   |   V   |               |   J   |   Y   |   O   |    U   |    Ö   |    Å   |
+                               &kp ESC   &kp B   &kp L   &kp D   &kp C   &kp V                   &kp J   &kp Y   &kp O   &kp U    &kp SEMI &kp LBKT
+
+                             //|  TAB  |   N   |   R   |   T   |   S    |   G   |              |   P   |   H   |   A   |    E   |    I   |    Ä   |
+                                &kp TAB &kp N &hm CTRL R &hm LALT T &hm LGUI S   &kp G        &kp P   &hm RGUI H &hm RALT A &hm RCTL E &kp I &kp SQT
+
+                             //        |   X   |   Q   |   M   |   W   |   Z   |               |   K   |   F   |   '   |    ,   |    .   |
+                                         &kp X   &kp Q   &kp M   &kp W   &kp Z                   &kp K   &kp F &kp BSLH &kp DOT &kp MINUS 
 
                              //                |   <   |   >   |                                               |   [   |    ]   |
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
 
 
-                             //                        |ALT    |  CTRL |  &studio_unlock |               |  ESC  | SPACE | BKSP  |
-                                                              &studio_unlock    &kp K  &kp L             &kp ESC &kp SPACE &kp BSPC  
-                                                                 &kp N &kp M                 &kp DEL &kp RET   
+                             //                  |  DEL   |  SHIFT |  To 2 |               |  to 1  | SPACE | BKSP  |
+                                                  &kp DEL  &kp K    MO_TOG(2)             MO_TOG(1) &kp SPACE &kp BSPC  
+
+                             //                                  | none | none |               | none | none |
+                                                                   &none   &none                  &none &none   
                         >;
                 };
-
         };
 };
 

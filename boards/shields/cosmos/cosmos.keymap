@@ -94,7 +94,7 @@
 
 
                              //|  TAB  |   N   |   R   |   T   |   S    |   G   |              |   P   |   H   |   A   |    E   |    I   |    Ä   |
-                                &kp TAB &kp N &hm CTRL R &hm LALT T &hm LGUI S   &kp G        &kp P   &hm RGUI H &hm RALT A &hm CTRL E &kp I &kp SINGLE_QUOTE
+                                &kp TAB &kp N &hm CTRL R &hm LALT T &hm LGUI S   &kp G        &kp P   &hm RGUI H &hm RALT A &hm LCTRL E &kp I &kp SINGLE_QUOTE
 
                              //        |   X   |   Q   |   M   |   W   |   Z   |               |   K   |   F   |   '   |    ,   |    .   |
                                          &kp X   &kp Q   &kp M   &kp W   &kp Z                   &kp K   &kp F &kp BSLH &kp DOT &kp MINUS 

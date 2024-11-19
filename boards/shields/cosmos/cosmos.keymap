@@ -86,7 +86,7 @@
           	                                        &mt LC(LS(LALT)) SPC    &trans                  &trans          &kp E
 		>;*/
                 
-                Layer 1 { // Layer 1, mallen klar. ska verkställas
+                Layer1 { // Layer 1, mallen klar. ska verkställas
                         bindings = <
                                 // --------------------------------------------------------------
                              //|  ESC  |   B   |   L   |   D   |   C   |   V   |               |   J   |   Y   |   O   |    U   |    Ö   |    Å   |

@@ -93,7 +93,7 @@
                                &kp ESC   &kp B   &kp L   &kp D   &kp C   &kp V                   &kp J   &kp Y   &kp O   &kp U    &kp SEMI &kp LBKT
 
                              //|  TAB  |   N   |   R   |   T   |   S    |   G   |              |   P   |   H   |   A   |    E   |    I   |    Ä   |
-                                &kp TAB &kp N &hm CTRL R &hm LALT T &hm LGUI S   &kp G        &kp P   &hm LGUI H &none &none &none &none //&hm RALT A  &hm LCTRL E &kp I &kp SINGLE_QUOTE
+                                &kp TAB &kp N &hm CTRL R &hm LALT T &hm LGUI S   &kp G        &none  &none  &none &none &none &none // &kp P &hm LGUI H &hm RALT A  &hm LCTRL E &kp I &kp SINGLE_QUOTE
 
                              //        |   X   |   Q   |   M   |   W   |   Z   |               |   K   |   F   |   '   |    ,   |    .   |
                                          &kp X   &kp Q   &kp M   &kp W   &kp Z                   &kp K   &kp F &kp BSLH &kp DOT &kp MINUS 

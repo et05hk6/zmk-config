@@ -152,8 +152,8 @@
                              //|  TAB  |   N   |   R   |   @   |   /   |   !   |              |   *   |   4   |   5   |    6   |    +   |    none   |
                                 &kp TAB  &kp A   &kp S &hm LALT T   &kp F   &kp G                   &kp H   &kp J   &kp K   &kp L    &none    &none
 
-                             //    ;   |   X   |   Q   |   &   |   \   |   Z   |               |   K   |   1   |   2   |    3   |  ENTER |
-                                         &kp Z   &kp X   &kp C   &kp V   &kp B                   &kp N   &kp M &kp COMMA &kp DOT &kp MINUS 
+                             //    ;   |   X   |   Q   |   &   | Bluetooth next |  bluetooth clear   |               |   K   |   1   |   2   |    3   |  ENTER |
+                                         &kp Z   &kp X   &kp C   &bt BT_NXT   &bt BT_CLR                   &kp N   &kp M &kp COMMA &kp DOT &kp MINUS 
 
                              //                |   <   |   >   |                                               |   0   |    .   |
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT

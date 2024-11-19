@@ -18,7 +18,7 @@
             key-positions = <21 22>;
             bindings = <&kp ESC>;
         };
-    }
+    };
 
     behaviors {
         mo_tog: behavior_mo_tog {

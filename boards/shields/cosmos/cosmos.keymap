@@ -64,7 +64,7 @@
 		    flavor = "tap-preferred";
 		    bindings = <&kp>, <&kp>;
 		};
-		lt: layertap {
+		tl: layertap {
 		    compatible = "zmk,behavior-hold-tap";
 		    label = "LAYERTAP";
 		    #binding-cells = <2>;

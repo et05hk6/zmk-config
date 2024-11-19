@@ -170,8 +170,8 @@
                 layer3 { // Nav layer
                         bindings = <
                                 // --------------------------------------------------------------
-                             //|  ESC  |   B   |   L   |   D   |   C   |   V   |               |   J   |   Y   |   O   |    U   |    Ö   |    Å   |
-                               &kp ESC   &kp B   &kp L   &kp D   &kp C   &kp V                   &kp J   &kp Y   &kp O   &kp U    &kp SEMI &kp LBKT
+                             //|  ESC  |   B   |   L   |   D   |   C   |   V   |               |   J   |   Y   |   O   |    U   |    Ö   |   bootloader   |
+                               &kp ESC   &kp B   &kp L   &kp D   &kp C   &kp V                   &kp J   &kp Y   &kp O   &kp U    &kp SEMI &bootloader
 
                              //|  TAB  |   N   |   R   |   T   |   S    |   G   |              |   P   |   H   |   A   |    E   |    I   |    Ä   |
                                 &kp TAB &kp N &hm LCTRL R &hm LALT T &hm LGUI S   &kp G        &kp P   &hm RGUI H &hm RALT A &hm RCTL E &kp I &kp SQT

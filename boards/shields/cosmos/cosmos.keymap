@@ -86,7 +86,7 @@
           	                                        &mt LC(LS(LALT)) SPC    &trans                  &trans          &kp E
 		>;*/
                 
-                default_layer { // Layer 0, mallen klar. ska verkställas
+                Layer 1 { // Layer 1, mallen klar. ska verkställas
                         bindings = <
                                 // --------------------------------------------------------------
                              //|  ESC  |   B   |   L   |   D   |   C   |   V   |               |   J   |   Y   |   O   |    U   |    Ö   |    Å   |
@@ -103,8 +103,8 @@
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
 
 
-                             //                  |  DEL   |  SHIFT |  To 2 |               |  to 1  | SPACE | BKSP  |
-                                                  &kp DEL  &kp K    MO_TOG(2)             MO_TOG(1) &kp SPACE &kp BSPC  
+                             //                  |  DEL   |  SHIFT |  To 3 |               |  to 2  | SPACE | BKSP  |
+                                                  &kp DEL  &kp K    MO_TOG(3)             MO_TOG(2) &kp SPACE &kp BSPC  
 
                              //                                  | none | none |               | none | none |
                                                                    &none   &none                  &none &none   
@@ -119,7 +119,7 @@
 					                                &to 0                   &trans  	&trans  &to 2 
 		>;*/
 
-                layer1 { // Specialtecken-lager
+                layer2 { // Specialtecken-lager
                         bindings = <
                                 // --------------------------------------------------------------
                              //|  ESC  |   B   |   L   |   #   |  '|'  |   V   |               |   J   |   Y   |   O   |    U   |    Ö   |    Å   |
@@ -135,15 +135,15 @@
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
 
 
-                             //                  |  stdio ulck   |  SHIFT |  To 3 |               |  to 1  | SPACE | BKSP  |
-                                                  &studio_unlock  &kp K    MO_TOG(3)             MO_TOG(1) &kp SPACE &kp BSPC  
+                             //                  |  stdio ulck   |  SHIFT |  To 3 |               |  to 2  | SPACE | BKSP  |
+                                                  &studio_unlock  &kp K    MO_TOG(3)             MO_TOG(2) &kp SPACE &kp BSPC  
 
                              //                                  | none | none |               | none | none |
                                                                    &none   &none                  &none &none   
                         >;
                 };
 
-                layer2 { // Nummer-lager
+                layer3 { // Nummer-lager
                         bindings = <
                                 // --------------------------------------------------------------
                              //|  ESC  |   B   |   L   |   #   |  '|'  |   V   |               |   DIV   |   7   |   8   |    9   |    -   |    none   |
@@ -159,15 +159,15 @@
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
 
 
-                             //                  |  stdio ulck   | To 3 |   |               |  to 1  | SPACE | BKSP  |
-                                                  &studio_unlock MO_TOG(3) &none                 MO_TOG(1) &kp SPACE &kp BSPC  
+                             //                  |  stdio ulck   | To 4 |   |               |  to 1  | SPACE | BKSP  |
+                                                  &studio_unlock MO_TOG(4) &none                 MO_TOG(1) &kp SPACE &kp BSPC  
 
                              //                                  | none | none |               | none | none |
                                                                    &none   &none                  &none &none   
                         >;
                 };
                 
-                layer3 { // Nav layer
+                layer4 { // Nav layer
                         bindings = <
                                 // --------------------------------------------------------------
                              //|  ESC  |   B   |   L   |   D   |   C   |   V   |               |   J   |   Y   |   O   |    U   |    Ö   |   bootloader   |
@@ -183,8 +183,8 @@
                                                 &kp LT   &kp GT                                                  &kp LBKT &kp RBKT
 
 
-                             //                  |  DEL   |  SHIFT |  To 2 |               |  to 1  | SPACE | BKSP  |
-                                                  &kp DEL  &kp K    MO_TOG(2)             MO_TOG(1) &kp SPACE &kp BSPC  
+                             //                  |  DEL   |  SHIFT |  To 1 |               |  to 1  | SPACE | BKSP  |
+                                                  &kp DEL  &kp K    MO_TOG(1)             MO_TOG(1) &kp SPACE &kp BSPC  
 
                              //                                  | none | none |               | none | none |
                                                                    &none   &none                  &none &none   

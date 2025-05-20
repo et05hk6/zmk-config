@@ -26,7 +26,7 @@
 		};
 		combo_ent {
 		    timeout-ms = <50>;
-		    key-positions = <27 28>;
+		    key-positions = <30 31>;
 		    bindings = <&kp RET>;
 		};
 		combo_1 {
@@ -38,6 +38,12 @@
 		    timeout-ms = <50>;
 		    key-positions = <24 25>;
 		    bindings = <&to 1>;
+		};
+		combo_scol {
+		    timeout-ms = <50>;
+		    key-positions = <16 27>;
+		    bindings = <&kp f>;
+		    layers = <0>;
 		};
 		combo_scol {
 		    timeout-ms = <50>;

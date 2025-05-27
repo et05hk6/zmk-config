@@ -14,9 +14,14 @@
 	combos {
 		compatible = "zmk,combos";
 
-		combo_ent {
+		combo_ent_right {
 		    timeout-ms = <50>;
 		    key-positions = <30 31>;
+		    bindings = <&kp RET>;
+		};
+		combo_ent_left {
+		    timeout-ms = <50>;
+		    key-positions = <26 27>;
 		    bindings = <&kp RET>;
 		};
 
@@ -25,31 +30,6 @@
 		    key-positions = <16 27>;
 		    bindings = <&kp F>;
 		    layers = <0>;
-		};
-
-		combo_minus {
-		    timeout-ms = <50>;
-		    key-positions = <0 1>;
-		    bindings = <&kp MINUS>;
-		    layers = <0>;
-		};
-		combo_sqt {
-		    timeout-ms = <50>;
-		    key-positions = <14 15>;
-		    bindings = <&kp SQT>;
-		    layers = <1>;
-		};
-		combo_dqt {
-		    timeout-ms = <50>;
-		    key-positions = <2 3>;
-		    bindings = <&kp DQT>;
-		    //layers = <1>;
-		};
-
-		combo_del {
-		    timeout-ms = <50>;
-		    key-positions = <22 23>;
-		    bindings = <&kp DEL>;
 		};
 	};
 	

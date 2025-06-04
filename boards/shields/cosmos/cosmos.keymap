@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
+#include <cosmos.h>
 
 #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
@@ -16,20 +17,25 @@
 
 		combo_ent_right {
 		    timeout-ms = <50>;
-		    key-positions = <30 31>;
+		    key-positions = <RB1 RB2>;
 		    bindings = <&kp RET>;
 		};
 		combo_ent_left {
 		    timeout-ms = <50>;
-		    key-positions = <26 27>;
+		    key-positions = <LB1 LB2>;
 		    bindings = <&kp RET>;
 		};
 
 		combo_f {
 		    timeout-ms = <50>;
-		    key-positions = <16 27>;
+		    key-positions = <LM1 LB1>;
 		    bindings = <&kp F>;
 		    layers = <0>;
+		};
+		combo_bksp {
+		    timeout-ms = <50>;
+		    key-positions = <EB2 RB3>;
+		    bindings = <&kp BSPC>;
 		};
 	};
 	

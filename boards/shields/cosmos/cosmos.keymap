@@ -34,7 +34,7 @@
 		};
 		combo_bksp {
 		    timeout-ms = <50>;
-		    key-positions = <EB2 RB3>;
+		    key-positions = <RB2 RB3>;
 		    bindings = <&kp BSPC>;
 		};
 	};

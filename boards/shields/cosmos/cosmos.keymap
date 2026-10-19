@@ -46,7 +46,7 @@
 		combo_del_left {
 		    timeout-ms = <50>;
 		    key-positions = <LB2 LB3 LH1>;
-		    bindings = <&kp DELETE>;
+		    bindings = <&kp DEL>;
 		};
 	};
 	

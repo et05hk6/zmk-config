@@ -215,7 +215,7 @@
                                                                    &none   &none                  &none &none   
                         >;
                 };
-				layer5 { // Shortcuts layer 1
+				/*layer5 { // Shortcuts layer 1
                         bindings = <
                                 // --------------------------------------------------------------
                              //|  ESC  |   B   |   L   |   D   |   C   |   V   |               |   J   |   Y   |   O   |    U   |    Ö   |   bootloader   |
@@ -260,7 +260,7 @@
                              //                                  | none | none |               | none | none |
                                                                    &none   &none                  &none &none   
                         >;
-                };
+                };*/
         };
 };
 

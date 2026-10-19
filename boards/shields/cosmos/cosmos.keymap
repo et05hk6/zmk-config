@@ -39,13 +39,13 @@
 		};
 		combo_bksp_left {
 		    timeout-ms = <50>;
-		    key-positions = <LB2 LB3>;
+		    key-positions = <LB3 LB4>;
 		    bindings = <&kp BSPC>;
 		};
 
 		combo_del_left {
 		    timeout-ms = <50>;
-		    key-positions = <LB2 LB3 LB4>;
+		    key-positions = <LB2 LB3>;
 		    bindings = <&kp DEL>;
 		};
 	};
